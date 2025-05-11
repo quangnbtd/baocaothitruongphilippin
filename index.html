@@ -4,76 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Báo Cáo Thị Trường Nhuộm Tóc Shopee PH 2025 - Trực Quan & Hiện Đại</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* ALL CSS HERE */
+        /* Custom base styles */
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: #FDFDFD;
-            color: #333;
             scroll-behavior: smooth;
+            color: #333; /* Default text color */
         }
-
-        .sticky-header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 5%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .sticky-header .logo {
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #FF6600;
-            text-decoration: none;
         }
-        .sticky-header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-        .sticky-header nav a {
-            text-decoration: none;
-            color: #444;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: color 0.3s ease;
-        }
-        .sticky-header nav a:hover, .sticky-header nav a.active {
-            color: #FF6600;
-        }
-
-        .section {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.8em;
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: #1a1a1a;
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
+        .text-primary { color: #FF6600; }
+        .bg-primary { background-color: #FF6600; }
+        .border-primary { border-color: #FF6600; }
+        .cta-button-hover:hover {
+            background-color: #e65c00; /* Darker orange */
+            transform: translateY(-2px);
         }
         .section-title::after {
             content: '';
@@ -86,760 +39,554 @@
             background-color: #FF6600;
             border-radius: 2px;
         }
-
-        .sub-section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            color: #2c2c2c;
-        }
-
-        #hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 165, 0, 0.05)), url('https://images.unsplash.com/photo-1593700949149-59219707538f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjU5N3wwfDF8c2VhcmNofDE3fHxoYWlyJTIwY29sb3J8ZW58MHx8fHwxNzA4OTc4MzA1fDA&ixlib=rb-4.0.3&q=80&w=1800') no-repeat center center/cover;
-            color: #fff;
-        }
-        .hero-content {
-            background-color: rgba(0,0,0,0.5);
-            padding: 40px;
-            border-radius: 10px;
-        }
-        h1.hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4em;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        p.hero-subtitle {
-            font-size: 1.5em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: #FF6600;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255,102,0,0.4);
-        }
-        .cta-button:hover {
-            background-color: #e65c00;
-            transform: translateY(-3px);
-        }
-
-        .stat-highlight {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #FF6600;
-        }
-        .stat-box {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .stat-box .stat-value {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #FF6600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .stat-box .stat-label {
-            font-size: 1em;
-            color: #555;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .brand-grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-        }
-        .card img.card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 15px;
-        }
-        .card .brand-logo-container {
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        .card .brand-logo-container img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-        .card-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .card p.brand-description {
-            font-size: 0.9em;
-            color: #555;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-
-        .product-list li {
-            border: none;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .product-list img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .chart-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            margin-top: 30px;
-            margin-bottom: 30px;
-            position: relative;
-            height: 380px;
-        }
-        .chart-container-scrollable-y {
-            max-height: 380px;
-            overflow-y: auto;
-            position: relative;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-
-        .swot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .swot-item {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-            border-left: 5px solid;
-        }
-        .swot-item.strength { border-color: #4CAF50; }
-        .swot-item.weakness { border-color: #F44336; }
-        .swot-item.opportunity { border-color: #FFC107; }
-        .swot-item.threat { border-color: #9C27B0; }
-        .swot-item h4 {
-            margin-top: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-        .swot-item.strength h4 { color: #4CAF50; }
-        .swot-item.weakness h4 { color: #F44336; }
-        .swot-item.opportunity h4 { color: #FFC107; }
-        .swot-item.threat h4 { color: #9C27B0; }
-
-        /* SỬA LỖI ĐÈ CHỮ CHO DANH SÁCH KHUYẾN NGHỊ */
-        .recommendation-list {
-            list-style: none;
-            padding-left: 0;
-        }
+        /* Custom styles for recommendation list */
         .recommendation-list li {
             position: relative;
-            padding-left: 30px; /* Khoảng trống cho icon */
-            margin-bottom: 12px; /* Tăng khoảng cách giữa các dòng */
-            line-height: 1.5; /* Đảm bảo đủ chiều cao dòng */
-        }
-        .recommendation-list li::before {
-            content: '✓'; /* Hoặc SVG icon: content: url('data:image/svg+xml...'); */
-            position: absolute;
-            left: 0;
-            top: 0; /* Hoặc điều chỉnh top cho phù hợp với line-height */
-            color: #FF6600; /* Màu icon */
-            font-weight: bold;
-            font-size: 1.2em; /* Kích thước icon */
-        }
-
-
-        footer {
-            text-align: center;
-            padding: 30px 5%;
-            background-color: #222;
-            color: #ccc;
-            margin-top: 60px;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="sticky-header">
-        <a href="#hero" class="logo">SHOPEE HAIR DYE REPORT</a>
-        <nav>
-            <ul id="nav-links">
-                <li><a href="#tong-quan">Tổng Quan</a></li>
-                <li><a href="#shopee-phan-tich">Phân Tích Shopee</a></li>
-                <li><a href="#xu-huong">Xu Hướng</a></li>
-                <li><a href="#thuong-hieu">Thương Hiệu</a></li>
-                <li><a href="#swot">SWOT</a></li>
-                <li><a href="#du-bao">Dự Báo</a></li>
-                <li><a href="#ket-luan">Kết Luận</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- HERO SECTION -->
-        <section id="hero">
-             <div class="hero-content" data-aos="zoom-in-up">
-                <h1 class="hero-title">BÁO CÁO THỊ TRƯỜNG<br>NHUỘM TÓC PHILIPPINES</h1>
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Phân tích chi tiết trên nền tảng Shopee & Xu Hướng Phủ Bạc 2025</p>
-                <a href="#tong-quan" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Khám Phá Ngay</a>
-            </div>
-        </section>
-
-        <!-- TỔNG QUAN THỊ TRƯỜNG -->
-        <section id="tong-quan" class="section">
-            <h2 class="section-title" data-aos="fade-up">I. TỔNG QUAN THỊ TRƯỜNG</h2>
-            <div class="grid-container">
-                <div class="stat-box" data-aos="fade-right">
-                    <!-- 13.2 triệu USD * 25000 = 330 tỷ VNĐ -->
-                    <span class="stat-value" id="marketValue2025">330 Tỷ</span>
-                    <span class="stat-label">VNĐ - Giá trị thị trường nhuộm tóc PH 2025</span>
-                </div>
-                <div class="stat-box" data-aos="fade-up">
-                    <span class="stat-value" id="cagrValue">8.1%</span>
-                    <span class="stat-label">Tỷ lệ tăng trưởng (2025-2029)</span>
-                </div>
-                <div class="stat-box" data-aos="fade-left">
-                     <!-- 18.1 triệu USD * 25000 = 452.5 tỷ VNĐ -->
-                    <span class="stat-value" id="marketValue2029">452.5 Tỷ</span>
-                    <span class="stat-label">VNĐ - Dự kiến giá trị thị trường 2029</span>
-                </div>
-            </div>
-
-            <div class="grid-container" style="margin-top: 40px; align-items: center;">
-                <div data-aos="fade-right">
-                    <h3 class="sub-section-title">1. Thị trường nhuộm tóc tại Philippines</h3>
-                    <!-- 13.2 triệu USD -> 330 tỷ VNĐ -->
-                    <!-- 1.09 tỷ USD -> 2.725 Tỷ VNĐ hoặc 2.725 Tỷ VNĐ -->
-                    <p>Thị trường nhuộm tóc tại Philippines đang chứng kiến sự tăng trưởng mạnh mẽ, dự kiến đạt <span class="stat-highlight">330 tỷ VNĐ</span> vào năm 2025 và tiếp tục mở rộng với CAGR <span class="stat-highlight">8,1%</span>. Toàn ngành chăm sóc tóc dự kiến đạt <span class="stat-highlight">2.725 Tỷ VNĐ</span> vào năm 2025.</p>
-                    <p><a href="https://ecommercedb.com/markets/ph/hair-dyes" target="_blank" class="cta-button" style="font-size: 0.9em; padding: 8px 15px; margin: 10px 0;">Nguồn: eCommerceDB</a></p>
-                </div>
-                <div data-aos="fade-left" class="chart-container">
-                    <h4 style="text-align:center; margin-bottom:15px;">Tăng Trưởng Thị Trường Nhuộm Tóc (Tỷ VNĐ)</h4>
-                    <canvas id="marketGrowthChart"></canvas>
-                </div>
-            </div>
-
-            <div class="grid-container" style="margin-top: 40px; align-items: center;">
-                 <div data-aos="fade-right" class="chart-container-scrollable-y">
-                    <h4 style="text-align:center; margin-bottom:15px;">Tỷ Lệ Dân Số Cao Tuổi (%)</h4>
-                    <canvas id="agingPopulationChart"></canvas>
-                </div>
-                <div data-aos="fade-left">
-                    <h3 class="sub-section-title">2. Thị trường nhuộm tóc phủ bạc</h3>
-                    <p>Xu hướng già hóa dân số (dự kiến 9,5% dân số cao tuổi vào 2020 và tiếp tục tăng) đang thúc đẩy mạnh mẽ nhu cầu cho các sản phẩm nhuộm tóc phủ bạc, biến đây thành một phân khúc đầy tiềm năng.</p>
-                    <img src="https://lananhtrinh.vn/wp-content/uploads/2022/12/1670779015_349dc6972da7f279606ab3d95819a58b.jpg" alt="Người tóc bạc" style="width:100%; border-radius:8px; margin-top:15px;">
-                </div>
-            </div>
-        </section>
-
-        <!-- PHÂN TÍCH SHOPEE -->
-        <section id="shopee-phan-tich" class="section" style="background-color: #f8f9fa;">
-            <h2 class="section-title" data-aos="fade-up">II. PHÂN TÍCH SHOPEE PHILIPPINES</h2>
-            <div class="grid-container">
-                <div class="card" data-aos="zoom-in-right">
-                    <!-- THAY THẾ BẰNG LINK ẢNH SHOPEE MỚI NẾU CẦN -->
-                    <img src="https://cdn.techinasia.com/cloudinary/transformations/wp-content/uploads/2022/09/1664456428_7d726cf2bab8151d1e1a4bd4c53f8680_v1664456428_xlarge.webp" alt="Shopee" class="card-image" style="object-fit: cover; background-color:#FFEEE3;">
-                    <h3 class="card-title">Vị thế của Shopee</h3>
-                    <p>Shopee thống trị TMĐT Philippines với <span class="stat-highlight">46%</span> thị phần và <span class="stat-highlight">~71,94 triệu</span> lượt truy cập/tháng (Ước tính 2025), tạo nền tảng vững chắc cho các nhà bán hàng.</p>
-                </div>
-                <div class="card chart-container" data-aos="zoom-in-left">
-                     <h3 class="card-title" style="text-align:center;">Thị Phần Shopee</h3>
-                    <canvas id="shopeeMarketShareChart"></canvas>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px;">
-                <h3 class="sub-section-title" data-aos="fade-up">Phân tích danh mục và sản phẩm trên Shopee</h3>
-                <div class="grid-container">
-                    <div class="card chart-container aos-init aos-animate" data-aos="fade-up">
-                        <h4 class="card-title" style="text-align:center;">Thị Phần Thương Hiệu Phổ Biến (Ước Tính)</h4>
-                        <canvas id="brandMarketShareChart"></canvas>
-                    </div>
-                    <div class="card chart-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="card-title" style="text-align:center;">Mức Độ Ưa Chuộng Màu Phủ Bạc (Ước Tính)</h4>
-                        <canvas id="popularHairColorChart"></canvas>
-                         <p style="text-align:center; font-size:0.9em; margin-top:10px;"><em>Màu Xám Bạc (Silver/Gray) cũng là một xu hướng thời trang.</em></p>
-                    </div>
-                     <div class="card chart-container" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="card-title" style="text-align:center;">Thị Phần Phân Khúc Giá (Ước Tính VNĐ)</h4>
-                        <canvas id="priceSegmentShareChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-up" style="margin-top: 30px;">
-                <h3 class="sub-section-title">Ưu tiên của người tiêu dùng</h3>
-                <div class="grid-container">
-                    <div class="card">Sản phẩm tự nhiên, ít hóa chất</div>
-                    <div class="card">Dễ sử dụng tại nhà</div>
-                    <div class="card">Phủ bạc hoàn toàn</div>
-                    <div class="card">Thêm dưỡng chất (Keratin, Argan oil)</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- XU HƯỚNG -->
-        <section id="xu-huong" class="section">
-             <h2 class="section-title" data-aos="fade-up">III. ĐÓN ĐẦU XU HƯỚNG 2024-2025</h2>
-            <div class="grid-container">
-                <div class="card" data-aos="fade-right">
-                    <!-- THAY THẾ BẰNG LINK ẢNH XU HƯỚNG TÓC MỚI NẾU CẦN -->
-                    <img src="https://thaomocanan.vn/wp-content/uploads/2021/04/dau-goi-nhuom-toc-thao-duoc.jpg" alt="Xu hướng nhuộm tóc" class="card-image">
-                    <h3 class="card-title">Xu hướng Nhuộm Tóc Phủ Bạc</h3>
-                    <ul>
-                        <li><strong>"Hybrid" Hair Color:</strong> Tự nhiên, ít phải nhuộm lại.</li>
-                        <li><strong>Blended Gray Transitions:</strong> Chuyển màu mượt mà.</li>
-                        <li><strong>Natural & Organic:</strong> Ưu tiên thành phần an toàn.</li>
-                        <li><strong>Silver/Gray Accents:</strong> Tóc bạc trở thành điểm nhấn thời trang.</li>
-                    </ul>
-                </div>
-                <div class="card" data-aos="fade-left">
-                    <!-- THAY THẾ BẰNG LINK ẢNH TMĐT MỚI NẾU CẦN -->
-                     <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjU5N3wwfDF8c2VhcmNofDEzfHxlJTIwY29tbWVyY2UlMjBvbmxpbmUlMjBzaG9wcGluZ3xlbnwwfHx8fDE3MDg5Nzg3Mjh8MA&ixlib=rb-4.0.3&q=80&w=500" alt="Xu hướng TMĐT" class="card-image">
-                    <h3 class="card-title">Xu hướng Thương Mại Điện Tử</h3>
-                    <ul>
-                        <li><strong>Omnichannel:</strong> Trải nghiệm mua sắm đồng nhất.</li>
-                        <li><strong>AI & Personalization:</strong> Gợi ý sản phẩm thông minh.</li>
-                        <li><strong>Social Commerce:</strong> Mua sắm qua mạng xã hội.</li>
-                        <li><strong>Sustainability:</strong> Ưu tiên sản phẩm bền vững.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- THƯƠNG HIỆU (CARD LOGO VÀ MÔ TẢ) -->
-        <section id="thuong-hieu" class="section" style="background-color: #f8f9fa;">
-            <h2 class="section-title" data-aos="fade-up">IV. THƯƠNG HIỆU & SẢN PHẨM TÂM ĐIỂM</h2>
-            <h3 class="sub-section-title" data-aos="fade-up">1. Top Thương Hiệu Nhuộm Phủ Bạc trên Shopee PH (Tổng quan)</h3>
-            <div class="brand-grid-container">
-                <div class="card" data-aos="zoom-in">
-                    <div class="brand-logo-container">
-                        <img src="https://thietkelogo.mondial.vn/wp-content/uploads/2024/01/LOreal-logo.png.jpg" alt="L'Oréal Logo">
-                    </div>
-                    <h4 class="card-title">L'Oréal Paris</h4>
-                    <p class="brand-description">Chất lượng quốc tế, đa dạng dòng sản phẩm.</p>
-                </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="50">
-                     <div class="brand-logo-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqW_XsMeI_q_x-nZ14w_kTSyOomCJqOR_1cA&s" alt="Bigen Logo">
-                    </div>
-                    <h4 class="card-title">Bigen</h4>
-                    <p class="brand-description">Nổi tiếng với Bigen Speedy, phủ bạc hiệu quả.</p>
-                </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="brand-logo-container">
-                        <img src="https://ph-test-11.slatic.net/p/e16adf99b7d5904d72dffc8651df6d03.png" alt="iColor Logo"> <!-- BẮT BUỘC THAY THẾ URL -->
-                    </div>
-                    <h4 class="card-title">ICOLOR</h4>
-                    <p class="brand-description">Phổ biến với dầu gội nhuộm, tiện lợi.</p>
-                </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="brand-logo-container">
-                        <img src="https://medias.watsons.com.ph/publishing/WTCPH-50039833-front-zoom.jpg?version=1721931305" alt="Klik Logo"> <!-- BẮT BUỘC THAY THẾ URL -->
-                    </div>
-                    <h4 class="card-title">KLIK</h4>
-                    <p class="brand-description">Kem nhuộm với các màu thời trang, giá cả phải chăng.</p>
-                </div>
-                 <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="brand-logo-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEhDe4n01-LmdJRByYFZxR9eBXUleKwchXIQ&s" alt="Bremod Logo"> <!-- BẮT BUỘC THAY THẾ URL -->
-                    </div>
-                    <h4 class="card-title">Bremod</h4>
-                    <p class="brand-description">Thương hiệu địa phương được ưa chuộng, đa dạng.</p>
-                </div>
-            </div>
-
-            <h3 class="sub-section-title" data-aos="fade-up" style="margin-top:50px;">2. Sản Phẩm Bán Chạy Nhất (Giá VNĐ)</h3>
-             <ul class="product-list aos-init aos-animate" data-aos="fade-up">
-                <li>
-                    <a href="https://shopee.ph/TEN-TWENTY-FDA-APPROVED-3-IN-1-NATURAL-HERBAL-HAIR-DYE-SHAMPOO-LONG-LASTING-COLOR-PERFECT-500mL-i.1128141439.29358746815?sp_atk=1e13daab-0746-4796-8f60-d8cafc73fc32&xptdk=1e13daab-0746-4796-8f60-d8cafc73fc32" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;">
-                        <img src="https://down-ph.img.susercontent.com/file/sg-11134201-7rdxk-lz8vowbvzrzo55.webp" alt="TEN TWENTY Hair Dye Shampoo">
-                        <div style="margin-left: 15px;">
-                            <strong>TEN TWENTY 3-IN-1 Herbal Hair Dye Shampoo (500mL)</strong>
-                            <!-- Giá ₱58 * 450 = 56,100 VNĐ (Lấy giá thấp nhất nếu có nhiều lựa chọn Flash Sale) -->
-                            <br>Giá Flash Sale: ~56,100 VNĐ <del style="font-size:0.8em; color:#999;">(~83,750 VNĐ)</del> <span style="color:red; font-weight:bold;">-63%</span>
-                            <br>Đánh giá: 4.7/5 sao, Đã bán: >4.4K
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://shopee.ph/%E3%80%902PCS-is-better%E3%80%91Herbal-Hair-Coloring-Shampoo-Hair-Dye-Turn-Into-Black-BROWN-in-15mins-Non-irritating-i.1412372819.29370483488?sp_atk=62c34259-2c17-45f9-9338-c066b8a7913c&xptdk=62c34259-2c17-45f9-9338-c066b8a7913c" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;">
-                        <img src="https://down-ph.img.susercontent.com/file/ph-11134207-7rasa-m9ffq40en58350@resize_w900_nl.webp" alt="Herbal Hair Coloring Shampoo">
-                        <div style="margin-left: 15px;">
-                            <strong>【2PCS】Herbal Hair Coloring Shampoo (Black/Brown)</strong>
-                            <!-- Giá ₱109 * 450 = 49,050 VNĐ -->
-                            <br>Giá Flash Sale: ~49,050 VNĐ
-                            <br>Đánh giá: 4.8/5 sao, Đã bán: >5.7K
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://shopee.ph/Bremod-Hair-Color-Milk-Tea-Ash-Honey-Tea-Brown-Black-Blonde-Dust-Burgundy-Red-Light-Copper-Blonde-i.371403347.4578739936?sp_atk=2ff7d9b9-c60f-4584-a8c6-abe7714726d1&xptdk=2ff7d9b9-c60f-4584-a8c6-abe7714726d1" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;">
-                        <img src="https://down-ph.img.susercontent.com/file/a388d5d28c967adb69a2490271066e62.webp" alt="Bremod Hair Color">
-                        <div style="margin-left: 15px;">
-                            <strong>Bremod Hair Color (Nhiều màu)</strong>
-                            <!-- Bạn cần kiểm tra giá cụ thể cho Bremod vì nó có nhiều lựa chọn màu -->
-                            <!-- Ví dụ giá tham khảo, 1 sản phẩm Bremod có thể khoảng ₱80 - ₱150 -->
-                            <!-- ₱80 * 450 = 36,000 VNĐ -->
-                            <br>Giá tham khảo: ~36,000 - 67,500 VNĐ
-                            <br>Đánh giá: 4.8/5 sao, Đã bán: >10K
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <!-- SWOT -->
-        <section id="swot" class="section">
-            <h2 class="section-title" data-aos="fade-up">V. PHÂN TÍCH SWOT</h2>
-            <div class="swot-grid">
-                <div class="swot-item strength" data-aos="fade-right" data-aos-delay="0">
-                    <h4><i class="fas fa-thumbs-up"></i> Điểm mạnh (Strengths)</h4>
-                    <ul>
-                        <li>Nền tảng Shopee mạnh mẽ, thị phần lớn.</li>
-                        <li>Đa dạng sản phẩm, giá cả cạnh tranh.</li>
-                        <li>Hệ thống đánh giá minh bạch.</li>
-                    </ul>
-                </div>
-                <div class="swot-item weakness" data-aos="fade-right" data-aos-delay="100">
-                    <h4><i class="fas fa-thumbs-down"></i> Điểm yếu (Weaknesses)</h4>
-                    <ul>
-                        <li>Khó thử màu trực tuyến.</li>
-                        <li>Thiếu tư vấn chuyên sâu cá nhân.</li>
-                    </ul>
-                </div>
-                <div class="swot-item opportunity" data-aos="fade-left" data-aos-delay="200">
-                    <h4><i class="fas fa-lightbulb"></i> Cơ hội (Opportunities)</h4>
-                    <ul>
-                        <li>Dân số già hóa tăng nhu cầu.</li>
-                        <li>Xu hướng DIY làm đẹp tại nhà.</li>
-                        <li>Công nghệ AR thử màu.</li>
-                    </ul>
-                </div>
-                <div class="swot-item threat" data-aos="fade-left" data-aos-delay="300">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Thách thức (Threats)</h4>
-                    <ul>
-                        <li>Cạnh tranh từ các sàn và salon.</li>
-                        <li>Vấn đề hàng giả, hàng nhái.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- DỰ BÁO VÀ KHUYẾN NGHỊ -->
-        <section id="du-bao" class="section" style="background-color: #f8f9fa;">
-             <h2 class="section-title" data-aos="fade-up">VI. DỰ BÁO VÀ KHUYẾN NGHỊ</h2>
-             <div class="grid-container">
-                <div data-aos="fade-up" class="chart-container">
-                    <h3 class="sub-section-title" style="margin-top:0;">1. Dự báo thị trường 2025-2030</h3>
-                    <h4 style="text-align:center; margin-bottom:15px;">Dự Báo Tăng Trưởng Thị Trường (Tỷ VNĐ)</h4>
-                    <canvas id="futureMarketGrowthChart"></canvas>
-                    <!-- 18.1 triệu USD -> 452.5 tỷ VNĐ -->
-                    <p style="margin-top:15px; text-align:center;">Thị trường dự kiến tăng trưởng <span class="stat-highlight">8,1%</span> hàng năm, đạt <span class="stat-highlight">452.5 tỷ VNĐ</span> vào 2029.</p>
-                </div>
-
-                .recommendation-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .recommendation-list li {
-            position: relative; /* Cần thiết cho ::before position: absolute */
-            padding-left: 35px; /* Khoảng trống cho icon và một chút lề */
-            margin-bottom: 15px; /* Khoảng cách giữa các dòng */
-            line-height: 1.6;    /* Đảm bảo đủ chiều cao dòng cho text */
-            transition: color 0.3s;
-            /* overflow: hidden; */ /* Thử thêm cái này nếu text quá dài và bị tràn */
-            /* word-break: break-word; */ /* Hoặc cái này để ngắt từ nếu cần */
+            padding-left: 30px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            transition: color 0.3s ease;
         }
         .recommendation-list li::before {
             content: '✓';
             position: absolute;
-            left: 5px;          /* Vị trí icon từ mép trái của li */
-            top: 1px;           /* Điều chỉnh để icon thẳng hàng với dòng text đầu tiên */
-                                /* Bạn có thể cần điều chỉnh giá trị này dựa trên font-size và line-height */
-            color: var(--primary-color);
+            left: 0;
+            top: 2px; /* Adjusted for better alignment */
+            color: #FF6600; /* Primary color */
             font-weight: bold;
-            font-size: 1.4em;
+            font-size: 1.2em;
             transition: transform 0.3s ease;
         }
         .recommendation-list li:hover {
-            color: var(--primary-color);
+            color: #FF6600; /* Primary color */
         }
         .recommendation-list li:hover::before {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
-                </div>
+        /* Ensure canvas is responsive */
+        canvas {
+            max-width: 100%;
+            height: auto !important; /* Override Chart.js inline style if needed */
+        }
+        .chart-container {
+            height: 380px; /* Maintain a consistent height for chart containers */
+        }
+         /* Styling for product list items */
+        .product-list-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-list-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
 
-                <div data-aos="fade-up" data-aos-delay="200">
-                     <h3 class="sub-section-title">3. Khuyến nghị cho Shopee</h3>
-                    <ul class="recommendation-list"> <!-- SỬ DỤNG CLASS MỚI -->
-                        <li>Tối ưu thuật toán tìm kiếm, cá nhân hóa.</li>
-                        <li>Chương trình Loyalty cho ngành hàng.</li>
-                        <li>Tăng cường kiểm soát chất lượng, chống hàng giả.</li>
-                        <li>Hợp tác KOLs, chuyên gia tư vấn online.</li>
-                    </ul>
-                </div>
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#hero" class="font-montserrat text-xl font-bold text-primary">SHOPEE HAIR DYE REPORT</a>
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-6">
+                    <li><a href="#tong-quan" class="text-gray-700 hover:text-primary font-semibold">Tổng Quan</a></li>
+                    <li><a href="#shopee-phan-tich" class="text-gray-700 hover:text-primary font-semibold">Phân Tích Shopee</a></li>
+                    <li><a href="#xu-huong" class="text-gray-700 hover:text-primary font-semibold">Xu Hướng</a></li>
+                    <li><a href="#thuong-hieu" class="text-gray-700 hover:text-primary font-semibold">Thương Hiệu</a></li>
+                    <li><a href="#swot" class="text-gray-700 hover:text-primary font-semibold">SWOT</a></li>
+                    <li><a href="#du-bao" class="text-gray-700 hover:text-primary font-semibold">Dự Báo</a></li>
+                    <li><a href="#ket-luan" class="text-gray-700 hover:text-primary font-semibold">Kết Luận</a></li>
+                </ul>
+            </nav>
+            </div>
+    </header>
+
+    <main>
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center text-center text-white" style="background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 165, 0, 0.05)), url('https://images.unsplash.com/photo-1593700949149-59219707538f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjU5N3wwfDF8c2VhcmNofDE3fHxoYWlyJTIwY29sb3J8ZW58MHx8fHwxNzA4OTc4MzA1fDA&ixlib=rb-4.0.3&q=80&w=1800') no-repeat center center/cover;">
+            <div class="bg-black/50 p-8 md:p-12 rounded-xl max-w-3xl mx-auto" data-aos="zoom-in-up">
+                <h1 class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black mb-4 leading-tight">BÁO CÁO THỊ TRƯỜNG<br>NHUỘM TÓC PHILIPPINES</h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">Phân tích chi tiết trên nền tảng Shopee & Xu Hướng Phủ Bạc 2025</p>
+                <a href="#tong-quan" class="inline-block bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg shadow-md hover:bg-orange-700 transition duration-300 cta-button-hover" data-aos="zoom-in" data-aos-delay="400">Khám Phá Ngay</a>
             </div>
         </section>
 
-        <!-- KẾT LUẬN -->
-        <section id="ket-luan" class="section">
-            <h2 class="section-title" data-aos="fade-up">VII. KẾT LUẬN</h2>
-            <div data-aos="fade-up" style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1em;">
-                <p>Thị trường nhuộm tóc, đặc biệt là phân khúc phủ bạc, trên Shopee Philippines sở hữu tiềm năng tăng trưởng vượt trội. Sự bùng nổ của TMĐT cùng với thay đổi nhân khẩu học là động lực chính. Để thành công, các thương hiệu và nhà bán lẻ cần nắm bắt xu hướng, đổi mới sản phẩm và tối ưu hóa trải nghiệm khách hàng trên nền tảng Shopee.</p>
-                <a href="#hero" class="cta-button" style="margin-top: 30px;">Xem Lại Từ Đầu</a>
-            </div>
-        </section>
-    </main>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Báo cáo Thị trường Nhuộm tóc Philippines trên Shopee. Nghiên cứu & Tổng hợp bởi vuquang.</p>
-        <p>Thông tin trong báo cáo này mang tính chất tham khảo và được tổng hợp từ các nguồn công khai công cụ đo lường sàn PHILIPPINES .</p>
+            <section id="tong-quan" class="py-16 md:py-20">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">I. TỔNG QUAN THỊ TRƯỜNG</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center" data-aos="fade-right">
+                        <span class="block font-montserrat text-4xl font-bold text-primary mb-2" id="marketValue2025">330 Tỷ</span>
+                        <span class="text-gray-600">VNĐ - Giá trị thị trường nhuộm tóc PH 2025</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center" data-aos="fade-up">
+                        <span class="block font-montserrat text-4xl font-bold text-primary mb-2" id="cagrValue">8.1%</span>
+                        <span class="text-gray-600">Tỷ lệ tăng trưởng (2025-2029)</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center" data-aos="fade-left">
+                        <span class="block font-montserrat text-4xl font-bold text-primary mb-2" id="marketValue2029">452.5 Tỷ</span>
+                        <span class="text-gray-600">VNĐ - Dự kiến giá trị thị trường 2029</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+                    <div data-aos="fade-right">
+                        <h3 class="font-montserrat text-2xl font-bold text-gray-800 mb-4">1. Thị trường nhuộm tóc tại Philippines</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Thị trường nhuộm tóc tại Philippines đang chứng kiến sự tăng trưởng mạnh mẽ, dự kiến đạt <span class="font-bold text-primary">330 tỷ VNĐ</span> vào năm 2025 và tiếp tục mở rộng với CAGR <span class="font-bold text-primary">8,1%</span>. Toàn ngành chăm sóc tóc dự kiến đạt <span class="font-bold text-primary">27.250 Tỷ VNĐ</span> vào năm 2025.</p>
+                        <a href="https://ecommercedb.com/markets/ph/hair-dyes" target="_blank" class="inline-block bg-primary text-white text-sm py-2 px-4 rounded-md font-semibold hover:bg-orange-700 transition duration-300 cta-button-hover">Nguồn: eCommerceDB</a>
+                    </div>
+                    <div data-aos="fade-left" class="bg-white p-6 rounded-xl shadow-lg chart-container flex flex-col justify-center">
+                        <h4 class="font-montserrat text-lg font-semibold text-center mb-4 text-gray-700">Tăng Trưởng Thị Trường Nhuộm Tóc (Tỷ VNĐ)</h4>
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div data-aos="fade-right" class="bg-white p-6 rounded-xl shadow-lg chart-container flex flex-col justify-center order-2 lg:order-1">
+                        <h4 class="font-montserrat text-lg font-semibold text-center mb-4 text-gray-700">Tỷ Lệ Dân Số Cao Tuổi (%)</h4>
+                        <canvas id="agingPopulationChart"></canvas>
+                    </div>
+                    <div data-aos="fade-left" class="order-1 lg:order-2">
+                        <h3 class="font-montserrat text-2xl font-bold text-gray-800 mb-4">2. Thị trường nhuộm tóc phủ bạc</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Xu hướng già hóa dân số (dự kiến 9,5% dân số cao tuổi vào 2020 và tiếp tục tăng) đang thúc đẩy mạnh mẽ nhu cầu cho các sản phẩm nhuộm tóc phủ bạc, biến đây thành một phân khúc đầy tiềm năng.</p>
+                        <img src="https://lananhtrinh.vn/wp-content/uploads/2022/12/1670779015_349dc6972da7f279606ab3d95819a58b.jpg" alt="[Hình ảnh người tóc bạc]" class="w-full rounded-lg shadow-md mt-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/orange/white?text=Hinh+Anh+Toc+Bac';">
+                    </div>
+                </div>
+            </section>
+
+            <section id="shopee-phan-tich" class="py-16 md:py-20 bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">II. PHÂN TÍCH SHOPEE PHILIPPINES</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col" data-aos="zoom-in-right">
+                        <img src="https://cdn.techinasia.com/cloudinary/transformations/wp-content/uploads/2022/09/1664456428_7d726cf2bab8151d1e1a4bd4c53f8680_v1664456428_xlarge.webp" alt="[Hình ảnh Shopee]" class="w-full h-48 object-cover rounded-md mb-4 bg-orange-100" onerror="this.onerror=null;this.src='https://placehold.co/600x300/orange/white?text=Shopee+Platform';">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 text-center mb-2">Vị thế của Shopee</h3>
+                        <p class="text-gray-700 leading-relaxed text-center">Shopee thống trị TMĐT Philippines với <span class="font-bold text-primary">46%</span> thị phần và <span class="font-bold text-primary">~71,94 triệu</span> lượt truy cập/tháng (Ước tính 2025), tạo nền tảng vững chắc cho các nhà bán hàng.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg chart-container flex flex-col justify-center" data-aos="zoom-in-left">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 text-center mb-4">Thị Phần Shopee</h3>
+                        <canvas id="shopeeMarketShareChart"></canvas>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-montserrat text-2xl font-bold text-gray-800 mb-8 text-center md:text-left" data-aos="fade-up">Phân tích danh mục và sản phẩm trên Shopee</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+                        <div class="bg-white p-4 rounded-xl shadow-lg chart-container flex flex-col justify-center" data-aos="fade-up">
+                            <h4 class="font-montserrat text-lg font-semibold text-center mb-3 text-gray-700">Thị Phần Thương Hiệu Phổ Biến (Ước Tính)</h4>
+                            <canvas id="brandMarketShareChart"></canvas>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg chart-container flex flex-col justify-center" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-montserrat text-lg font-semibold text-center mb-3 text-gray-700">Mức Độ Ưa Chuộng Màu Phủ Bạc (Ước Tính)</h4>
+                            <canvas id="popularHairColorChart"></canvas>
+                            <p class="text-center text-sm text-gray-600 mt-2"><em>Màu Xám Bạc (Silver/Gray) cũng là một xu hướng thời trang.</em></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg chart-container flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-montserrat text-lg font-semibold text-center mb-3 text-gray-700">Thị Phần Phân Khúc Giá (Ước Tính VNĐ)</h4>
+                            <canvas id="priceSegmentShareChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up">
+                    <h3 class="font-montserrat text-2xl font-bold text-gray-800 mb-6 text-center md:text-left">Ưu tiên của người tiêu dùng</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center font-semibold text-gray-700">Sản phẩm tự nhiên, ít hóa chất</div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center font-semibold text-gray-700">Dễ sử dụng tại nhà</div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center font-semibold text-gray-700">Phủ bạc hoàn toàn</div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center font-semibold text-gray-700">Thêm dưỡng chất (Keratin, Argan oil)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="xu-huong" class="py-16 md:py-20">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">III. ĐÓN ĐẦU XU HƯỚNG 2024-2025</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-right">
+                        <img src="https://thaomocanan.vn/wp-content/uploads/2021/04/dau-goi-nhuom-toc-thao-duoc.jpg" alt="[Hình ảnh xu hướng nhuộm tóc]" class="w-full h-56 object-cover rounded-md mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/orange/white?text=Xu+Huong+Nhuom';">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-4">Xu hướng Nhuộm Tóc Phủ Bạc</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><strong>"Hybrid" Hair Color:</strong> Tự nhiên, ít phải nhuộm lại.</li>
+                            <li><strong>Blended Gray Transitions:</strong> Chuyển màu mượt mà.</li>
+                            <li><strong>Natural & Organic:</strong> Ưu tiên thành phần an toàn.</li>
+                            <li><strong>Silver/Gray Accents:</strong> Tóc bạc trở thành điểm nhấn thời trang.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjU5N3wwfDF8c2VhcmNofDEzfHxlJTIwY29tbWVyY2UlMjBvbmxpbmUlMjBzaG9wcGluZ3xlbnwwfHx8fDE3MDg5Nzg3Mjh8MA&ixlib=rb-4.0.3&q=80&w=500" alt="[Hình ảnh xu hướng TMĐT]" class="w-full h-56 object-cover rounded-md mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/orange/white?text=Xu+Huong+TMDT';">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-4">Xu hướng Thương Mại Điện Tử</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><strong>Omnichannel:</strong> Trải nghiệm mua sắm đồng nhất.</li>
+                            <li><strong>AI & Personalization:</strong> Gợi ý sản phẩm thông minh.</li>
+                            <li><strong>Social Commerce:</strong> Mua sắm qua mạng xã hội.</li>
+                            <li><strong>Sustainability:</strong> Ưu tiên sản phẩm bền vững.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="thuong-hieu" class="py-16 md:py-20 bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">IV. THƯƠNG HIỆU & SẢN PHẨM TÂM ĐIỂM</h2>
+                <h3 class="font-montserrat text-2xl font-bold text-gray-800 mb-8 text-center md:text-left" data-aos="fade-up">1. Top Thương Hiệu Nhuộm Phủ Bạc trên Shopee PH (Tổng quan)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in">
+                        <div class="h-24 w-full flex items-center justify-center mb-4">
+                            <img src="https://thietkelogo.mondial.vn/wp-content/uploads/2024/01/LOreal-logo.png.jpg" alt="[Logo L'Oréal]" class="max-h-full max-w-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F3F4F6/374151?text=L%27Oreal';">
+                        </div>
+                        <h4 class="font-montserrat text-lg font-bold text-gray-800 mb-2">L'Oréal Paris</h4>
+                        <p class="text-sm text-gray-600">Chất lượng quốc tế, đa dạng dòng sản phẩm.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="50">
+                         <div class="h-24 w-full flex items-center justify-center mb-4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqW_XsMeI_q_x-nZ14w_kTSyOomCJqOR_1cA&s" alt="[Logo Bigen]" class="max-h-full max-w-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F3F4F6/374151?text=Bigen';">
+                        </div>
+                        <h4 class="font-montserrat text-lg font-bold text-gray-800 mb-2">Bigen</h4>
+                        <p class="text-sm text-gray-600">Nổi tiếng với Bigen Speedy, phủ bạc hiệu quả.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="h-24 w-full flex items-center justify-center mb-4">
+                            <img src="https://placehold.co/150x80/F3F4F6/374151?text=ICOLOR" alt="[Logo iColor Placeholder]" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F9F9F9/CCC?text=ICOLOR';">
+                        </div>
+                        <h4 class="font-montserrat text-lg font-bold text-gray-800 mb-2">ICOLOR</h4>
+                        <p class="text-sm text-gray-600">Phổ biến với dầu gội nhuộm, tiện lợi.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="150">
+                         <div class="h-24 w-full flex items-center justify-center mb-4">
+                            <img src="https://placehold.co/150x80/F3F4F6/374151?text=KLIK" alt="[Logo Klik Placeholder]" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F9F9F9/CCC?text=KLIK';">
+                        </div>
+                        <h4 class="font-montserrat text-lg font-bold text-gray-800 mb-2">KLIK</h4>
+                        <p class="text-sm text-gray-600">Kem nhuộm với các màu thời trang, giá cả phải chăng.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="h-24 w-full flex items-center justify-center mb-4">
+                            <img src="https://placehold.co/150x80/F3F4F6/374151?text=Bremod" alt="[Logo Bremod Placeholder]" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F9F9F9/CCC?text=Bremod';">
+                        </div>
+                        <h4 class="font-montserrat text-lg font-bold text-gray-800 mb-2">Bremod</h4>
+                        <p class="text-sm text-gray-600">Thương hiệu địa phương được ưa chuộng, đa dạng.</p>
+                    </div>
+                </div>
+
+                <h3 class="font-montserrat text-2xl font-bold text-gray-800 mt-12 mb-8 text-center md:text-left" data-aos="fade-up">2. Sản Phẩm Bán Chạy Nhất (Giá VNĐ)</h3>
+                <ul class="space-y-6" data-aos="fade-up">
+                    <li class="bg-white p-4 rounded-lg shadow-md product-list-item">
+                        <a href="https://shopee.ph/TEN-TWENTY-FDA-APPROVED-3-IN-1-NATURAL-HERBAL-HAIR-DYE-SHAMPOO-LONG-LASTING-COLOR-PERFECT-500mL-i.1128141439.29358746815?sp_atk=1e13daab-0746-4796-8f60-d8cafc73fc32&xptdk=1e13daab-0746-4796-8f60-d8cafc73fc32" target="_blank" class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 text-decoration-none text-gray-800">
+                            <img src="https://down-ph.img.susercontent.com/file/sg-11134201-7rdxk-lz8vowbvzrzo55.webp" alt="[Sản phẩm TEN TWENTY Hair Dye Shampoo]" class="w-24 h-24 object-contain rounded-md flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/orange/white?text=Product';">
+                            <div>
+                                <strong class="text-lg hover:text-primary">TEN TWENTY 3-IN-1 Herbal Hair Dye Shampoo (500mL)</strong>
+                                <p class="text-sm text-gray-600 mt-1">Giá Flash Sale: <span class="text-primary font-semibold">~56,100 VNĐ</span> <del class="text-xs text-gray-400">(~83,750 VNĐ)</del> <span class="text-red-500 font-bold text-xs">-63%</span></p>
+                                <p class="text-sm text-gray-600">Đánh giá: 4.7/5 sao, Đã bán: >4.4K</p>
+                            </div>
+                        </a>
+                    </li>
+                     <li class="bg-white p-4 rounded-lg shadow-md product-list-item">
+                        <a href="https://shopee.ph/%E3%80%902PCS-is-better%E3%80%91Herbal-Hair-Coloring-Shampoo-Hair-Dye-Turn-Into-Black-BROWN-in-15mins-Non-irritating-i.1412372819.29370483488?sp_atk=62c34259-2c17-45f9-9338-c066b8a7913c&xptdk=62c34259-2c17-45f9-9338-c066b8a7913c" target="_blank" class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 text-decoration-none text-gray-800">
+                            <img src="https://down-ph.img.susercontent.com/file/ph-11134207-7rasa-m9ffq40en58350@resize_w900_nl.webp" alt="[Sản phẩm Herbal Hair Coloring Shampoo]" class="w-24 h-24 object-contain rounded-md flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/orange/white?text=Product';">
+                            <div>
+                                <strong class="text-lg hover:text-primary">【2PCS】Herbal Hair Coloring Shampoo (Black/Brown)</strong>
+                                <p class="text-sm text-gray-600 mt-1">Giá Flash Sale: <span class="text-primary font-semibold">~49,050 VNĐ</span></p>
+                                <p class="text-sm text-gray-600">Đánh giá: 4.8/5 sao, Đã bán: >5.7K</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-md product-list-item">
+                        <a href="https://shopee.ph/Bremod-Hair-Color-Milk-Tea-Ash-Honey-Tea-Brown-Black-Blonde-Dust-Burgundy-Red-Light-Copper-Blonde-i.371403347.4578739936?sp_atk=2ff7d9b9-c60f-4584-a8c6-abe7714726d1&xptdk=2ff7d9b9-c60f-4584-a8c6-abe7714726d1" target="_blank" class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 text-decoration-none text-gray-800">
+                            <img src="https://down-ph.img.susercontent.com/file/a388d5d28c967adb69a2490271066e62.webp" alt="[Sản phẩm Bremod Hair Color]" class="w-24 h-24 object-contain rounded-md flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/orange/white?text=Product';">
+                            <div>
+                                <strong class="text-lg hover:text-primary">Bremod Hair Color (Nhiều màu)</strong>
+                                <p class="text-sm text-gray-600 mt-1">Giá tham khảo: <span class="text-primary font-semibold">~36,000 - 67,500 VNĐ</span></p>
+                                <p class="text-sm text-gray-600">Đánh giá: 4.8/5 sao, Đã bán: >10K</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="swot" class="py-16 md:py-20">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">V. PHÂN TÍCH SWOT</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500" data-aos="fade-right">
+                        <h4 class="font-montserrat text-xl font-bold text-green-600 mb-3"><i class="fas fa-thumbs-up mr-2"></i>Điểm mạnh</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Nền tảng Shopee mạnh mẽ, thị phần lớn.</li>
+                            <li>Đa dạng sản phẩm, giá cả cạnh tranh.</li>
+                            <li>Hệ thống đánh giá minh bạch.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500" data-aos="fade-right" data-aos-delay="100">
+                        <h4 class="font-montserrat text-xl font-bold text-red-600 mb-3"><i class="fas fa-thumbs-down mr-2"></i>Điểm yếu</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Khó thử màu trực tuyến.</li>
+                            <li>Thiếu tư vấn chuyên sâu cá nhân.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500" data-aos="fade-left" data-aos-delay="200">
+                        <h4 class="font-montserrat text-xl font-bold text-yellow-600 mb-3"><i class="fas fa-lightbulb mr-2"></i>Cơ hội</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Dân số già hóa tăng nhu cầu.</li>
+                            <li>Xu hướng DIY làm đẹp tại nhà.</li>
+                            <li>Công nghệ AR thử màu.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500" data-aos="fade-left" data-aos-delay="300">
+                        <h4 class="font-montserrat text-xl font-bold text-purple-600 mb-3"><i class="fas fa-exclamation-triangle mr-2"></i>Thách thức</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Cạnh tranh từ các sàn và salon.</li>
+                            <li>Vấn đề hàng giả, hàng nhái.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="du-bao" class="py-16 md:py-20 bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 relative pb-4" data-aos="fade-up">VI. DỰ BÁO VÀ KHUYẾN NGHỊ</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+                    <div data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg chart-container flex flex-col justify-center">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-4 text-center">1. Dự báo thị trường 2025-2030</h3>
+                        <h4 class="font-montserrat text-lg font-semibold text-center mb-4 text-gray-700">Dự Báo Tăng Trưởng Thị Trường (Tỷ VNĐ)</h4>
+                        <canvas id="futureMarketGrowthChart"></canvas>
+                        <p class="mt-4 text-center text-gray-700">Thị trường dự kiến tăng trưởng <span class="font-bold text-primary">8,1%</span> hàng năm, đạt <span class="font-bold text-primary">452.5 tỷ VNĐ</span> vào 2029.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-6">2. Khuyến nghị cho Nhà Bán Hàng</h3>
+                        <ul class="recommendation-list text-gray-700">
+                            <li>Tập trung vào sản phẩm phủ bạc, tự nhiên.</li>
+                            <li>Đầu tư hình ảnh, video chất lượng cao.</li>
+                            <li>Xây dựng uy tín qua đánh giá, phản hồi.</li>
+                            <li>Tận dụng Shopee Live, Flash Sale.</li>
+                        </ul>
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-6 rounded-xl shadow-lg lg:col-span-2"> 
+                        <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-6">3. Khuyến nghị cho Shopee</h3>
+                        <ul class="recommendation-list text-gray-700">
+                            <li>Tối ưu thuật toán tìm kiếm, cá nhân hóa.</li>
+                            <li>Chương trình Loyalty cho ngành hàng.</li>
+                            <li>Tăng cường kiểm soát chất lượng, chống hàng giả.</li>
+                            <li>Hợp tác KOLs, chuyên gia tư vấn online.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ket-luan" class="py-16 md:py-20">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 relative pb-4" data-aos="fade-up">VII. KẾT LUẬN</h2>
+                <div data-aos="fade-up" class="max-w-3xl mx-auto text-center text-gray-700 leading-relaxed text-lg">
+                    <p class="mb-8">Thị trường nhuộm tóc, đặc biệt là phân khúc phủ bạc, trên Shopee Philippines sở hữu tiềm năng tăng trưởng vượt trội. Sự bùng nổ của TMĐT cùng với thay đổi nhân khẩu học là động lực chính. Để thành công, các thương hiệu và nhà bán lẻ cần nắm bắt xu hướng, đổi mới sản phẩm và tối ưu hóa trải nghiệm khách hàng trên nền tảng Shopee.</p>
+                    <a href="#hero" class="inline-block bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg shadow-md hover:bg-orange-700 transition duration-300 cta-button-hover">Xem Lại Từ Đầu</a>
+                </div>
+            </section>
+        </div> </main>
+
+    <footer class="bg-gray-800 text-gray-300 text-center py-10 mt-16">
+        <p class="mb-2">© 2025 Báo cáo Thị trường Nhuộm tóc Philippines trên Shopee. Nghiên cứu & Tổng hợp bởi vuquang.</p>
+        <p class="text-sm">Thông tin trong báo cáo này mang tính chất tham khảo và được tổng hợp từ các nguồn công khai công cụ đo lường sàn PHILIPPINES.</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0 "></script> -->
-
     <script>
-        // ALL JAVASCRIPT HERE
         AOS.init({
             duration: 800,
-            once: true,
-            offset: 50,
+            once: true, // Animation happens only once
+            offset: 50, // Offset (in px) from the original trigger point
         });
 
-        // Chart.register(ChartDataLabels);
+        // Common Chart Configuration
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        font: {
+                            family: "'Open Sans', sans-serif"
+                        }
+                    }
+                },
+                tooltip: {
+                    bodyFont: {
+                        family: "'Open Sans', sans-serif"
+                    },
+                    titleFont: {
+                        family: "'Montserrat', sans-serif"
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            family: "'Open Sans', sans-serif"
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            family: "'Open Sans', sans-serif"
+                        }
+                    }
+                }
+            }
+        };
+        const primaryColor = '#FF6600';
+        const secondaryColor = '#FFA500'; // Lighter orange
+        const tertiaryColor = '#FFD700'; // Gold/Yellowish for variety
 
-        document.querySelectorAll('header nav a').forEach(anchor => {
+        // 1. Market Growth Chart
+        const marketGrowthCtx = document.getElementById('marketGrowthChart')?.getContext('2d');
+        if (marketGrowthCtx) {
+            new Chart(marketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2022', '2023', '2024', '2025 (Dự kiến)'],
+                    datasets: [{
+                        label: 'Giá trị thị trường (Tỷ VNĐ)',
+                        data: [250, 280, 300, 330], // Sample data
+                        borderColor: primaryColor,
+                        backgroundColor: 'rgba(255, 102, 0, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: defaultChartOptions
+            });
+        }
+
+        // 2. Aging Population Chart
+        const agingPopulationCtx = document.getElementById('agingPopulationChart')?.getContext('2d');
+        if (agingPopulationCtx) {
+            new Chart(agingPopulationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2015', '2020', '2025 (Dự kiến)', '2030 (Dự kiến)'],
+                    datasets: [{
+                        label: 'Tỷ lệ dân số >60 tuổi (%)',
+                        data: [7.5, 9.5, 11.2, 13.5], // Sample data
+                        backgroundColor: [
+                            'rgba(255, 102, 0, 0.7)',
+                            'rgba(255, 165, 0, 0.7)',
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(75, 192, 192, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 102, 0, 1)',
+                            'rgba(255, 165, 0, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: defaultChartOptions
+            });
+        }
+
+        // 3. Shopee Market Share Chart
+        const shopeeMarketShareCtx = document.getElementById('shopeeMarketShareChart')?.getContext('2d');
+        if (shopeeMarketShareCtx) {
+            new Chart(shopeeMarketShareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Shopee', 'Đối thủ khác'],
+                    datasets: [{
+                        label: 'Thị Phần TMĐT Philippines',
+                        data: [46, 54], // Sample data based on text
+                        backgroundColor: [primaryColor, '#CCCCCC'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: { ...defaultChartOptions, cutout: '60%' }
+            });
+        }
+
+        // 4. Brand Market Share Chart
+        const brandMarketShareCtx = document.getElementById('brandMarketShareChart')?.getContext('2d');
+        if (brandMarketShareCtx) {
+            new Chart(brandMarketShareCtx, {
+                type: 'pie',
+                data: {
+                    labels: ["L'Oréal", "Bigen", "ICOLOR", "Klik", "Bremod", "Khác"],
+                    datasets: [{
+                        label: 'Thị phần thương hiệu (Ước tính)',
+                        data: [25, 20, 15, 12, 10, 18], // Sample data
+                        backgroundColor: [primaryColor, secondaryColor, tertiaryColor, '#4BC0C0', '#9966FF', '#FF9F40'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: defaultChartOptions
+            });
+        }
+
+        // 5. Popular Hair Color Chart
+        const popularHairColorCtx = document.getElementById('popularHairColorChart')?.getContext('2d');
+        if (popularHairColorCtx) {
+            new Chart(popularHairColorCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Nâu Đen Tự Nhiên', 'Nâu Hạt Dẻ', 'Đen Tuyền', 'Xám Bạc Thời Trang', 'Nâu Đồng'],
+                    datasets: [{
+                        label: 'Mức độ ưa chuộng màu phủ bạc',
+                        data: [40, 25, 20, 10, 5], // Sample data
+                        backgroundColor: secondaryColor,
+                        borderColor: primaryColor,
+                        borderWidth: 1
+                    }]
+                },
+                options: {...defaultChartOptions, indexAxis: 'y' } // Horizontal bar chart
+            });
+        }
+
+        // 6. Price Segment Share Chart
+        const priceSegmentShareCtx = document.getElementById('priceSegmentShareChart')?.getContext('2d');
+        if (priceSegmentShareCtx) {
+            new Chart(priceSegmentShareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['< 50K VNĐ', '50K - 100K VNĐ', '100K - 200K VNĐ', '> 200K VNĐ'],
+                    datasets: [{
+                        label: 'Thị phần phân khúc giá',
+                        data: [30, 45, 15, 10], // Sample data
+                        backgroundColor: [tertiaryColor, secondaryColor, primaryColor, '#6c757d'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: { ...defaultChartOptions, cutout: '60%' }
+            });
+        }
+
+        // 7. Future Market Growth Chart
+        const futureMarketGrowthCtx = document.getElementById('futureMarketGrowthChart')?.getContext('2d');
+        if (futureMarketGrowthCtx) {
+            new Chart(futureMarketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2025', '2026', '2027', '2028', '2029'],
+                    datasets: [{
+                        label: 'Dự báo tăng trưởng (Tỷ VNĐ)',
+                        data: [330, 357, 386, 417, 452.5], // Sample data based on text
+                        borderColor: primaryColor,
+                        backgroundColor: 'rgba(255, 102, 0, 0.2)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: defaultChartOptions
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
-                document.querySelectorAll('header nav a').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
             });
         });
-
-        // Tỷ giá (VÍ DỤ - CẦN CẬP NHẬT)
-        const USD_TO_VND = 25000;
-        const PHP_TO_VND = 450;
-
-        // CHART DATA & INITIALIZATION
-        const marketGrowthCtx = document.getElementById('marketGrowthChart');
-        if (marketGrowthCtx) {
-            new Chart(marketGrowthCtx.getContext('2d'), {
-                type: 'line', data: {
-                    labels: ['2023 (Ước tính)', '2025 (Dự kiến)', '2027 (Dự kiến)', '2029 (Dự kiến)'],
-                    datasets: [{
-                        label: 'Giá trị thị trường (Tỷ VNĐ)',
-                        data: [12.0 * USD_TO_VND / 1000, 13.2 * USD_TO_VND / 1000, 15.5 * USD_TO_VND / 1000, 18.1 * USD_TO_VND / 1000].map(v => parseFloat(v.toFixed(1))),
-                        borderColor: '#FF6600', backgroundColor: 'rgba(255, 102, 0, 0.1)', tension: 0.3, fill: true
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { callback: function(value) { return value + ' Tỷ';}} } } }
-            });
-        }
-
-        const agingPopulationCtx = document.getElementById('agingPopulationChart');
-        if (agingPopulationCtx) {
-            new Chart(agingPopulationCtx.getContext('2d'), {
-                type: 'bar', data: {
-                    labels: ['2015', '2020', '2025 (DK)', '2030 (DK)', '2035 (DK)', '2040 (DK)', '2045 (DK)', '2050 (DK)'],
-                    datasets: [{
-                        label: 'Tỷ lệ dân số >60 tuổi (%)', data: [6.4, 9.5, 11.2, 13.5, 15.0, 16.5, 18.0, 19.5],
-                        backgroundColor: ['#FFC107', '#FFDA63', '#FF9800', '#FFB74D', '#FF6600','#FF8A65',  '#E65100', '#F57C00'],
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { beginAtZero: true, ticks: { callback: function(value) { return value + '%';}} } } }
-            });
-        }
-
-        const shopeeMarketShareCtx = document.getElementById('shopeeMarketShareChart');
-        if (shopeeMarketShareCtx) {
-            new Chart(shopeeMarketShareCtx.getContext('2d'), {
-                type: 'doughnut', data: {
-                    labels: ['Shopee', 'Lazada', 'Khác'],
-                    datasets: [{
-                        label: 'Thị phần TMĐT Philippines', data: [46, 30, 24],
-                        backgroundColor: ['#FF6600', '#0D6EFD', '#CED4DA'], hoverOffset: 4
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: { callbacks: { label: function(context) {
-                    let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += context.parsed + '%'; } return label;
-                }}}}}
-            });
-        }
-
-        const brandMarketShareCtx = document.getElementById('brandMarketShareChart');
-        if (brandMarketShareCtx) {
-            new Chart(brandMarketShareCtx.getContext('2d'), {
-                type: 'doughnut', data: {
-                    labels: ["L'Oréal Paris", "BIGEN", "Bremod", "KLIK", "ICOLOR", "Khác"],
-                    datasets: [{
-                        label: 'Thị phần thương hiệu (%)', data: [30, 25, 15, 10, 10, 10], // VÍ DỤ
-                        backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(255, 206, 86, 0.7)', 'rgba(75, 192, 192, 0.7)', 'rgba(153, 102, 255, 0.7)', 'rgba(201, 203, 207, 0.7)'],
-                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(201, 203, 207, 1)'],
-                        borderWidth: 1, hoverOffset: 8
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }, tooltip: { callbacks: { label: function(context) {
-                    let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += context.parsed + '%'; } return label;
-                }}}}}
-            });
-        }
-
-        const popularHairColorCtx = document.getElementById('popularHairColorChart');
-        if (popularHairColorCtx) {
-            new Chart(popularHairColorCtx.getContext('2d'), {
-                type: 'pie', data: {
-                    labels: ['Đen (Black)', 'Nâu Đen (Brown-Black)', 'Nâu Tối (Dark Brown)', 'Nâu Tự Nhiên (Natural Brown)', 'Xám Bạc (Silver/Gray)', 'Màu Khác'],
-                    datasets: [{
-                        label: 'Mức độ ưa chuộng (%)', data: [35, 25, 20, 10, 5, 5], // VÍ DỤ
-                        backgroundColor: ['rgba(0, 0, 0, 0.7)', 'rgba(59, 39, 0, 0.7)', 'rgba(92, 64, 51, 0.7)', 'rgba(160, 82, 45, 0.7)', 'rgba(192, 192, 192, 0.7)', 'rgba(128, 0, 128, 0.7)'],
-                        borderColor: '#fff', borderWidth: 1, hoverOffset: 8
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }, tooltip: { callbacks: { label: function(context) {
-                    let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += context.parsed + '%'; } return label;
-                }}}}}
-            });
-        }
-
-        const priceSegmentShareCtx = document.getElementById('priceSegmentShareChart');
-        if (priceSegmentShareCtx) {
-            new Chart(priceSegmentShareCtx.getContext('2d'), {
-                type: 'doughnut', data: { // Giá đã được giả định quy đổi sang VNĐ cho labels
-                    labels: ['Phổ thông (<100K VNĐ)', 'Tầm trung (100K-225K VNĐ)', 'Cao cấp (>225K VNĐ)'],
-                    datasets: [{
-                        label: 'Thị phần theo phân khúc giá (%)', data: [55, 35, 10], // VÍ DỤ
-                        backgroundColor: ['rgba(75, 192, 192, 0.7)', 'rgba(255, 206, 86, 0.7)', 'rgba(255, 99, 132, 0.7)'],
-                        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 206, 86, 1)', 'rgba(255, 99, 132, 1)'],
-                        borderWidth: 1, hoverOffset: 8
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { padding: 15, font: { size: 12 } } }, tooltip: { callbacks: { label: function(context) {
-                    let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += context.parsed + '%'; } return label;
-                }}}}}
-            });
-        }
-
-        const futureMarketGrowthCtx = document.getElementById('futureMarketGrowthChart');
-        if (futureMarketGrowthCtx) {
-            new Chart(futureMarketGrowthCtx.getContext('2d'), {
-                type: 'line', data: {
-                    labels: ['2025', '2026', '2027', '2028', '2029'],
-                    datasets: [{
-                        label: 'Dự báo tăng trưởng (Tỷ VNĐ)',
-                        data: [13.2 * USD_TO_VND / 1000, 14.3 * USD_TO_VND / 1000, 15.5 * USD_TO_VND / 1000, 16.8 * USD_TO_VND / 1000, 18.1 * USD_TO_VND / 1000].map(v => parseFloat(v.toFixed(1))),
-                        borderColor: '#007bff', backgroundColor: 'rgba(0, 123, 255, 0.1)', tension: 0.3, fill: true
-                    }]
-                }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { callback: function(value) { return value + ' Tỷ';}} } } }
-            });
-        }
-
-        function animateValue(obj, start, end, duration, decimals = 1, unit = '') {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = (progress * (end - start) + start).toFixed(decimals) + unit;
-                if (progress < 1) { window.requestAnimationFrame(step); }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        const marketValue2025El = document.getElementById('marketValue2025');
-        const cagrValueEl = document.getElementById('cagrValue');
-        const marketValue2029El = document.getElementById('marketValue2029');
-
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'marketValue2025' && marketValue2025El) { animateValue(marketValue2025El, 0, 330, 1500, 0, ' Tỷ'); } // 13.2 * 25
-                    else if (entry.target.id === 'cagrValue' && cagrValueEl) { animateValue(cagrValueEl, 0, 8.1, 1500, 1, '%'); }
-                    else if (entry.target.id === 'marketValue2029' && marketValue2029El) { animateValue(marketValue2029El, 0, 452.5, 1500, 1, ' Tỷ'); } // 18.1 * 25
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-        if (marketValue2025El) observer.observe(marketValue2025El);
-        if (cagrValueEl) observer.observe(cagrValueEl);
-        if (marketValue2029El) observer.observe(marketValue2029El);
 
     </script>
 </body>
