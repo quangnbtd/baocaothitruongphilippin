@@ -10,7 +10,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Thêm thư viện chartjs-plugin-datalabels -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 
     <style>
@@ -81,6 +80,21 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        /* Styling for audio player (optional, Tailwind handles most) */
+        audio {
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        audio:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+            --tw-ring-opacity: 0.5;
+            --tw-ring-color: rgba(255, 102, 0, var(--tw-ring-opacity)); /* focus:ring-primary focus:ring-opacity-50 */
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -107,7 +121,22 @@
             <div class="bg-black/50 p-8 md:p-12 rounded-xl max-w-3xl mx-auto" data-aos="zoom-in-up">
                 <h1 class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black mb-4 leading-tight">BÁO CÁO THỊ TRƯỜNG<br>NHUỘM TÓC PHILIPPINES</h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">Phân tích chi tiết trên nền tảng Shopee & Xu Hướng Phủ Bạc 2025</p>
-                <a href="#tong-quan" class="inline-block bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg shadow-md hover:bg-orange-700 transition duration-300 cta-button-hover" data-aos="zoom-in" data-aos-delay="400">Khám Phá Ngay</a>
+                <a href="#tong-quan" class="inline-block bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg shadow-md hover:bg-orange-700 transition duration-300 cta-button-hover mb-6" data-aos="zoom-in" data-aos-delay="400">Khám Phá Ngay</a>
+                
+                <!-- MỤC NGHE BÁO CÁO ÂM THANH -->
+                <div class="mt-6 md:mt-8 pt-6 border-t border-gray-700" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="font-montserrat text-xl sm:text-2xl font-semibold text-gray-100 mb-4">
+                        <i class="fas fa-headphones-alt mr-2 text-primary"></i>Nghe Tóm Tắt Báo Cáo
+                    </h3>
+                    <audio controls class="w-full max-w-lg mx-auto">
+                        <source src="Th%E1%BB%8B%20Tr%C6%B0%E1%BB%9Dng%20Nhu%E1%BB%99m%20T%C3%B3c%20Shopee%20Philippines%202025.wav" type="audio/wav">
+                        Trình duyệt của bạn không hỗ trợ phát âm thanh.
+                        Bạn có thể tải về <a href="Th%E1%BB%8B%20Tr%C6%B0%E1%BB%9Dng%20Nhu%E1%BB%99m%20T%C3%B3c%20Shopee%20Philippines%202025.wav" download class="text-primary hover:underline">tại đây</a>.
+                    </audio>
+                    <p class="text-xs text-gray-400 mt-3"><em>(Bấm play để nghe báo cáo)</em></p>
+                </div>
+                <!-- KẾT THÚC MỤC NGHE BÁO CÁO ÂM THANH -->
+
             </div>
         </section>
 
@@ -394,7 +423,8 @@
                     <a href="#hero" class="inline-block bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg shadow-md hover:bg-orange-700 transition duration-300 cta-button-hover">Xem Lại Từ Đầu</a>
                 </div>
             </section>
-        </div> </main>
+        </div>
+    </main>
 
     <footer class="bg-gray-800 text-gray-300 text-center py-10 mt-16">
         <p class="mb-2">© 2025 Báo cáo Thị trường Nhuộm tóc Philippines trên Shopee. Nghiên cứu & Tổng hợp bởi vuquang.</p>
@@ -454,8 +484,11 @@
         const secondaryColor = '#FFA500'; // Lighter orange
         const tertiaryColor = '#FFD700'; // Gold/Yellowish for variety
 
-        // Đăng ký plugin datalabels một lần ở phạm vi toàn cục nếu nó không tự đăng ký
-        // Chart.register(ChartDataLabels); // Bỏ comment dòng này nếu bạn gặp lỗi plugin chưa được đăng ký
+        // Đăng ký plugin datalabels một lần ở phạm vi toàn cục
+        if (typeof ChartDataLabels !== 'undefined') {
+            Chart.register(ChartDataLabels);
+        }
+
 
         // 1. Market Growth Chart
         const marketGrowthCtx = document.getElementById('marketGrowthChart')?.getContext('2d');
@@ -542,23 +575,16 @@
             });
         }
 
-        // 5. Popular Hair Color Chart (ĐÃ SỬA)
+        // 5. Popular Hair Color Chart
         const popularHairColorCtx = document.getElementById('popularHairColorChart')?.getContext('2d');
         if (popularHairColorCtx) {
-            // Đăng ký plugin ở đây nếu chưa làm ở global. Quan trọng!
-            // Nếu đã đăng ký toàn cục ở trên, dòng này có thể không cần thiết.
-            // Tuy nhiên, để chắc chắn, bạn có thể giữ lại.
-            if (typeof ChartDataLabels !== 'undefined') {
-                 Chart.register(ChartDataLabels);
-            }
-
             new Chart(popularHairColorCtx, {
                 type: 'bar',
                 data: {
                     labels: ['Nâu Đen Tự Nhiên', 'Nâu Hạt Dẻ', 'Đen Tuyền', 'Xám Bạc Thời Trang', 'Nâu Đồng'],
                     datasets: [{
-                        label: 'Mức độ ưa chuộng (%)', // Thêm (%) vào label
-                        data: [40, 25, 20, 10, 5], // Số liệu cụ thể
+                        label: 'Mức độ ưa chuộng (%)',
+                        data: [40, 25, 20, 10, 5],
                         backgroundColor: secondaryColor,
                         borderColor: primaryColor,
                         borderWidth: 1
@@ -566,51 +592,32 @@
                 },
                 options: {
                     ...defaultChartOptions,
-                    indexAxis: 'y', // Biểu đồ cột ngang
+                    indexAxis: 'y',
                     scales: {
-                        x: { // Trục giá trị (giờ là x do indexAxis: 'y')
+                        x: {
                             beginAtZero: true,
                             ticks: {
-                                font: {
-                                    family: "'Open Sans', sans-serif"
-                                },
-                                callback: function(value) { // Thêm % vào trục
-                                    return value + "%"
-                                }
+                                font: { family: "'Open Sans', sans-serif" },
+                                callback: function(value) { return value + "%" }
                             }
                         },
-                        y: { // Trục danh mục (tên màu)
-                            ticks: {
-                                font: {
-                                    family: "'Open Sans', sans-serif"
-                                }
-                            }
-                        }
+                        y: { ticks: { font: { family: "'Open Sans', sans-serif" } } }
                     },
                     plugins: {
-                        ...defaultChartOptions.plugins, // Kế thừa legend, tooltip mặc định
-                        datalabels: { // Cấu hình cho plugin datalabels
+                        ...defaultChartOptions.plugins,
+                        datalabels: {
                             anchor: 'end',
                             align: 'end',
-                            formatter: (value, context) => {
-                                return value + '%'; // Hiển thị giá trị + %
-                            },
+                            formatter: (value, context) => { return value + '%'; },
                             color: '#333',
-                            font: {
-                                weight: 'bold',
-                                family: "'Open Sans', sans-serif"
-                            }
+                            font: { weight: 'bold', family: "'Open Sans', sans-serif" }
                         },
-                        tooltip: { // Cập nhật tooltip để hiển thị %
+                        tooltip: {
                             callbacks: {
                                 label: function(context) {
                                     let label = context.dataset.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed.x !== null) { // Dùng parsed.x vì indexAxis: 'y'
-                                        label += context.parsed.x + '%';
-                                    }
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) { label += context.parsed.x + '%'; }
                                     return label;
                                 }
                             }
@@ -619,7 +626,6 @@
                 }
             });
         }
-
 
         // 6. Price Segment Share Chart
         const priceSegmentShareCtx = document.getElementById('priceSegmentShareChart')?.getContext('2d');
@@ -630,7 +636,7 @@
                     labels: ['< 50K VNĐ', '50K - 100K VNĐ', '100K - 200K VNĐ', '> 200K VNĐ'],
                     datasets: [{
                         label: 'Thị phần phân khúc giá',
-                        data: [30, 45, 15, 10], // Sample data
+                        data: [30, 45, 15, 10],
                         backgroundColor: [tertiaryColor, secondaryColor, primaryColor, '#6c757d'],
                         hoverOffset: 4
                     }]
@@ -648,7 +654,7 @@
                     labels: ['2025', '2026', '2027', '2028', '2029'],
                     datasets: [{
                         label: 'Dự báo tăng trưởng (Tỷ VNĐ)',
-                        data: [330, 357, 386, 417, 452.5], // Sample data based on text
+                        data: [330, 357, 386, 417, 452.5],
                         borderColor: primaryColor,
                         backgroundColor: 'rgba(255, 102, 0, 0.2)',
                         fill: true,
@@ -672,7 +678,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>
