@@ -10,6 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Thêm thư viện chartjs-plugin-datalabels -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 
     <style>
         /* Custom base styles */
@@ -373,7 +375,7 @@
                             <li>Tận dụng Shopee Live, Flash Sale.</li>
                         </ul>
                     </div>
-                     <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-6 rounded-xl shadow-lg lg:col-span-2"> {/* Making this span 2 cols on large screens or adjust layout */}
+                     <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-6 rounded-xl shadow-lg lg:col-span-2">
                         <h3 class="font-montserrat text-xl font-bold text-gray-800 mb-6">3. Khuyến nghị cho Shopee</h3>
                         <ul class="recommendation-list text-gray-700">
                             <li>Tối ưu thuật toán tìm kiếm, cá nhân hóa.</li>
@@ -451,6 +453,9 @@
         const primaryColor = '#FF6600';
         const secondaryColor = '#FFA500'; // Lighter orange
         const tertiaryColor = '#FFD700'; // Gold/Yellowish for variety
+
+        // Đăng ký plugin datalabels một lần ở phạm vi toàn cục nếu nó không tự đăng ký
+        // Chart.register(ChartDataLabels); // Bỏ comment dòng này nếu bạn gặp lỗi plugin chưa được đăng ký
 
         // 1. Market Growth Chart
         const marketGrowthCtx = document.getElementById('marketGrowthChart')?.getContext('2d');
@@ -537,24 +542,84 @@
             });
         }
 
-        // 5. Popular Hair Color Chart
+        // 5. Popular Hair Color Chart (ĐÃ SỬA)
         const popularHairColorCtx = document.getElementById('popularHairColorChart')?.getContext('2d');
         if (popularHairColorCtx) {
+            // Đăng ký plugin ở đây nếu chưa làm ở global. Quan trọng!
+            // Nếu đã đăng ký toàn cục ở trên, dòng này có thể không cần thiết.
+            // Tuy nhiên, để chắc chắn, bạn có thể giữ lại.
+            if (typeof ChartDataLabels !== 'undefined') {
+                 Chart.register(ChartDataLabels);
+            }
+
             new Chart(popularHairColorCtx, {
                 type: 'bar',
                 data: {
                     labels: ['Nâu Đen Tự Nhiên', 'Nâu Hạt Dẻ', 'Đen Tuyền', 'Xám Bạc Thời Trang', 'Nâu Đồng'],
                     datasets: [{
-                        label: 'Mức độ ưa chuộng màu phủ bạc',
-                        data: [40, 25, 20, 10, 5], // Sample data
+                        label: 'Mức độ ưa chuộng (%)', // Thêm (%) vào label
+                        data: [40, 25, 20, 10, 5], // Số liệu cụ thể
                         backgroundColor: secondaryColor,
                         borderColor: primaryColor,
                         borderWidth: 1
                     }]
                 },
-                options: {...defaultChartOptions, indexAxis: 'y' } // Horizontal bar chart
+                options: {
+                    ...defaultChartOptions,
+                    indexAxis: 'y', // Biểu đồ cột ngang
+                    scales: {
+                        x: { // Trục giá trị (giờ là x do indexAxis: 'y')
+                            beginAtZero: true,
+                            ticks: {
+                                font: {
+                                    family: "'Open Sans', sans-serif"
+                                },
+                                callback: function(value) { // Thêm % vào trục
+                                    return value + "%"
+                                }
+                            }
+                        },
+                        y: { // Trục danh mục (tên màu)
+                            ticks: {
+                                font: {
+                                    family: "'Open Sans', sans-serif"
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...defaultChartOptions.plugins, // Kế thừa legend, tooltip mặc định
+                        datalabels: { // Cấu hình cho plugin datalabels
+                            anchor: 'end',
+                            align: 'end',
+                            formatter: (value, context) => {
+                                return value + '%'; // Hiển thị giá trị + %
+                            },
+                            color: '#333',
+                            font: {
+                                weight: 'bold',
+                                family: "'Open Sans', sans-serif"
+                            }
+                        },
+                        tooltip: { // Cập nhật tooltip để hiển thị %
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) { // Dùng parsed.x vì indexAxis: 'y'
+                                        label += context.parsed.x + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
             });
         }
+
 
         // 6. Price Segment Share Chart
         const priceSegmentShareCtx = document.getElementById('priceSegmentShareChart')?.getContext('2d');
